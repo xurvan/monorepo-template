@@ -16,6 +16,7 @@
 .env*
 
 # Binaries for programs and plugins
+bin/
 *.exe
 *.exe~
 *.dll
@@ -35,5 +36,6 @@ vendor/
 go.work
 go.work.sum
 
-# Binary files
-bin/
+# moon
+.moon/cache
+.moon/docker

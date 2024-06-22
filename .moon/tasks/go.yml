@@ -1,0 +1,19 @@
+tasks:
+  fix:
+    command: 'go fmt ./...'
+  check:
+    command: 'go vet ./...'
+  test:
+    command: 'go test ./...'
+  build:
+    command: 'go build -o bin/$project cmd/main.go'
+    inputs:
+      - 'cmd/main.go'
+    outputs:
+      - 'bin/$project'
+  docker:
+    command: 'docker build -t $project:dev .'
+    inputs:
+      - 'Dockerfile'
+    deps:
+      - '~:build'

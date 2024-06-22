@@ -1,0 +1,7 @@
+type: 'application'
+language: 'go'
+stack: 'backend'
+
+project:
+  name: 'srv2'
+  description: 'Testing library'
