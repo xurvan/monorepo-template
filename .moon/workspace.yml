@@ -3,8 +3,8 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 telemetry: false
 
 projects:
-  srv1: 'backend/srvs/srv1'
-  srv2: 'backend/srvs/srv2'
+  srv1: 'apps/app1'
+  srv2: 'apps/app2'
 
 vcs:
   manager: 'git'
