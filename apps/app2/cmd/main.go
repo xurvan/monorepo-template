@@ -1,14 +1,24 @@
 package main
 
 import (
-	"time"
-
-	"github.com/xurvan/monorepo-template/tools/hello"
+	"fmt"
+	"net/http"
 )
 
+func hello(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	_, err := fmt.Fprintf(w, `{"message": "hello"}`)
+	if err != nil {
+		panic(err)
+	}
+}
+
 func main() {
-	for {
-		hello.LogHello()
-		time.Sleep(5 * time.Second)
+	http.HandleFunc("/hello", hello)
+
+	err := http.ListenAndServe(":8001", nil)
+	if err != nil {
+		panic(err)
 	}
 }
