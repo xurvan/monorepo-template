@@ -1,13 +1,14 @@
 package main
 
 import (
-	"log"
 	"time"
+
+	"github.com/xurvan/monorepo-template/tools/hello"
 )
 
 func main() {
 	for {
-		log.Print("Hello, world!")
+		hello.LogHello()
 		time.Sleep(2 * time.Second)
 	}
 }
