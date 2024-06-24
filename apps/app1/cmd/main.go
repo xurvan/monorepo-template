@@ -1,7 +1,13 @@
 package main
 
-import "log"
+import (
+	"log"
+	"time"
+)
 
 func main() {
-	log.Print("Microservice #1")
+	for {
+		log.Print("Hello, world!")
+		time.Sleep(2 * time.Second)
+	}
 }
