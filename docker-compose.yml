@@ -1,4 +1,14 @@
 services:
+  app1:
+    image: ghcr.io/xurvan/app1:latest
+    networks:
+      - tyk
+  app2:
+    image: ghcr.io/xurvan/app2:latest
+    networks:
+      - tyk
+    ports:
+      - "127.0.0.1:8001:80"
   tyk-redis:
     image: redis:7.0-alpine3.16
     networks:
@@ -26,6 +36,7 @@ services:
       - tyk-redis
 
 networks:
+  default:
   tyk:
 
 volumes:

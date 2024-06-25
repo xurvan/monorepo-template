@@ -16,9 +16,16 @@ tasks:
     outputs:
       - 'bin/app'
   docker:
-    command: 'docker build -t $project:dev .'
+    command: 'docker build -t ghcr.io/xurvan/$project:latest .'
     inputs:
       - 'Dockerfile'
       - 'bin/app'
     deps:
       - '~:build'
+  publish:
+    command: 'docker push ghcr.io/xurvan/$project:latest'
+    inputs:
+      - 'Dockerfile'
+      - 'bin/app'
+    deps:
+      - '~:docker'
