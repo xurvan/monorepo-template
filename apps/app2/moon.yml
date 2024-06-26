@@ -4,4 +4,4 @@ stack: 'backend'
 
 project:
   name: 'app2'
-  description: 'Testing library'
+  description: 'HTTP server'
