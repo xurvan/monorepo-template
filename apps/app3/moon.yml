@@ -1,0 +1,11 @@
+type: 'application'
+language: 'go'
+stack: 'backend'
+
+project:
+  name: 'app3'
+  description: 'gRPC server'
+
+tasks:
+  buf:
+    command: 'buf generate'

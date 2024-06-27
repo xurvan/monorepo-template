@@ -36,6 +36,9 @@ vendor/
 go.work
 go.work.sum
 
-# moon
+# Moonrepo
 .moon/cache
 .moon/docker
+
+# Generated files
+gen/
