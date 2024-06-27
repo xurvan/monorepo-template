@@ -18,8 +18,8 @@ func hello(w http.ResponseWriter, req *http.Request) {
 func main() {
 	http.HandleFunc("/hello", hello)
 
-	log.Println("Serving HTTP on 0.0.0.0:80")
-	err := http.ListenAndServe(":80", nil)
+	log.Println("Serving HTTP on 0.0.0.0:8080")
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		panic(err)
 	}
