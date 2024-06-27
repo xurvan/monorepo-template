@@ -1,0 +1,6 @@
+### Hello
+GRPC 127.0.0.1:9090/apps.app3.pb.HelloService/SayHello
+
+{
+  "name": "Edward"
+}
