@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -17,6 +18,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 func main() {
 	http.HandleFunc("/hello", hello)
 
+	log.Println("Serving HTTP on 0.0.0.0:80")
 	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		panic(err)
