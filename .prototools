@@ -1,9 +1,9 @@
 go = "1.22"
-moon = "1.25"
-buf = "1.33"
 node = "22.3"
 pnpm = "9.3"
+moon = "1.25"
+buf = "1.33"
 
 [plugins]
-buf = "https://raw.githubusercontent.com/stk0vrfl0w/proto-toml-plugins/main/plugins/buf.toml"
 moon = "https://raw.githubusercontent.com/moonrepo/moon/master/proto-plugin.toml"
+buf = "https://raw.githubusercontent.com/stk0vrfl0w/proto-toml-plugins/main/plugins/buf.toml"
