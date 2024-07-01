@@ -3,15 +3,12 @@ package main
 import (
 	"context"
 	"log"
-	"net"
+	"net/http"
 
 	pb "github.com/xurvan/monorepo-template/apps/app3/gen/pb"
-	"google.golang.org/grpc"
 )
 
-type HelloService struct {
-	pb.UnimplementedHelloServiceServer
-}
+type HelloService struct{}
 
 func (s *HelloService) SayHello(ctx context.Context, req *pb.SayHelloRequest) (res *pb.SayHelloResponse, err error) {
 	res = &pb.SayHelloResponse{
@@ -22,14 +19,12 @@ func (s *HelloService) SayHello(ctx context.Context, req *pb.SayHelloRequest) (r
 }
 
 func main() {
-	lis, err := net.Listen("tcp", ":9090")
+	server := &HelloService{}
+	twirpHandler := pb.NewHelloServiceServer(server)
+
+	log.Println("Serving HTTP on 0.0.0.0:8080")
+	err := http.ListenAndServe(":8080", twirpHandler)
 	if err != nil {
 		panic(err)
 	}
-
-	s := grpc.NewServer()
-	pb.RegisterHelloServiceServer(s, &HelloService{})
-
-	log.Println("Serving gRPC on 0.0.0.0:9090")
-	log.Fatal(s.Serve(lis))
 }

@@ -3,6 +3,6 @@ plugins:
   - plugin: go
     out: gen
     opt: paths=source_relative
-  - plugin: go-grpc
+  - plugin: twirp
     out: gen
     opt: paths=source_relative
