@@ -1,15 +1,15 @@
 ### Hello
 # Check the gateway is up and running
-http://localhost:8080/hello
+http://localhost:8000/hello
 
 ### List APIs
 # Get list of all the existing APIs
-http://localhost:8080/tyk/apis
+http://localhost:8000/tyk/apis
 X-Tyk-Authorization: 76a76e2a-eff8-4e90-9195-c550f8038e3d
 
 ### Create API
 # Create a Tyk OAS API
-POST http://localhost:8080/tyk/apis/oas
+POST http://localhost:8000/tyk/apis/oas
 X-Tyk-Authorization: 76a76e2a-eff8-4e90-9195-c550f8038e3d
 Content-Type: application/json
 
@@ -53,5 +53,5 @@ Content-Type: application/json
 
 ### Reload
 # Restart or hot reload
-GET http://localhost:8080/tyk/reload/group
+GET http://localhost:8000/tyk/reload/group
 X-Tyk-Authorization: 76a76e2a-eff8-4e90-9195-c550f8038e3d
