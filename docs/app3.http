@@ -1,6 +1,5 @@
 ### Hello
-POST 127.0.0.1:8080/twirp/apps.app3.pb.HelloService/SayHello
-Content-Type: application/json
+GRPC 127.0.0.1:9090/apps.app3.pb.HelloService/SayHello
 
 {
   "name": "Edward"

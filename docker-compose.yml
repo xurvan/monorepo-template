@@ -39,7 +39,7 @@ services:
       lan:
         ipv4_address: 172.16.0.12
     ports:
-      - "127.0.0.1:8002:8080"
+      - "127.0.0.1:9001:9090"
 networks:
   lan:
     driver: bridge
