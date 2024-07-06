@@ -6,6 +6,7 @@ projects:
   app1: 'apps/app1'
   app2: 'apps/app2'
   app3: 'apps/app3'
+  app4: 'apps/app4'
 
 vcs:
   manager: 'git'
