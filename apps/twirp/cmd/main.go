@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	pb "github.com/xurvan/monorepo-template/apps/app4/gen/pb"
+	pb "github.com/xurvan/monorepo-template/apps/twirp/gen/pb"
 )
 
 type HelloService struct{}

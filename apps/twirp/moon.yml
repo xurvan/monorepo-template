@@ -3,7 +3,7 @@ language: 'go'
 stack: 'backend'
 
 project:
-  name: 'app4'
+  name: 'twirp'
   description: 'Twirp server'
 
 tasks:

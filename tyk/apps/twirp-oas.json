@@ -1,12 +1,12 @@
 {
   "components": {},
   "info": {
-    "title": "app4",
+    "title": "twirp",
     "version": "0.1.0"
   },
   "openapi": "3.0.3",
   "paths": {
-    "/twirp/apps.app4.pb.HelloService/SayHello": {
+    "/twirp/apps.twirp.pb.HelloService/SayHello": {
       "post": {
         "operationId": "sayHello",
         "requestBody": {
@@ -69,7 +69,7 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:8080/app4/"
+      "url": "http://127.0.0.1:8080/twirp/"
     },
     {
       "description": "local",
@@ -77,13 +77,13 @@
     },
     {
       "description": "gateway",
-      "url": "http://127.0.0.1:8000/app4/"
+      "url": "http://127.0.0.1:8000/twirp/"
     }
   ],
   "x-tyk-api-gateway": {
     "info": {
-      "id": "app4",
-      "name": "app4",
+      "id": "twirp",
+      "name": "twirp",
       "state": {
         "active": true
       }
@@ -93,7 +93,7 @@
     },
     "server": {
       "listenPath": {
-        "value": "/app4/",
+        "value": "/twirp/",
         "strip": true
       }
     },

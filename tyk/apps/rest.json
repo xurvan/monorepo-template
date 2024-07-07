@@ -1,10 +1,10 @@
 {
-  "name": "app4",
+  "name": "rest",
   "slug": "",
   "listen_port": 0,
   "protocol": "",
   "enable_proxy_protocol": false,
-  "api_id": "app4",
+  "api_id": "rest",
   "org_id": "",
   "use_keyless": true,
   "use_oauth2": false,
@@ -122,27 +122,6 @@
         },
         "use_extended_paths": true,
         "extended_paths": {
-          "white_list": [
-            {
-              "disabled": false,
-              "path": "/twirp/apps.app4.pb.HelloService/SayHello",
-              "method": "POST",
-              "ignore_case": false
-            }
-          ],
-          "transform": [
-            {
-              "disabled": false,
-              "template_data": {
-                "input_type": "json",
-                "template_mode": "blob",
-                "enable_session": true,
-                "template_source": "ewogICAgIm5hbWUiOiAie3submFtZX19Igp9Cg=="
-              },
-              "path": "/twirp/apps.app4.pb.HelloService/SayHello",
-              "method": "POST"
-            }
-          ],
           "persist_graphql": null
         },
         "global_headers": {},
@@ -179,8 +158,8 @@
   },
   "proxy": {
     "preserve_host_header": false,
-    "listen_path": "/app4/",
-    "target_url": "http://172.16.0.13:8080",
+    "listen_path": "/rest/",
+    "target_url": "http://172.16.0.11:8080",
     "disable_strip_slash": false,
     "strip_listen_path": true,
     "enable_load_balancing": false,

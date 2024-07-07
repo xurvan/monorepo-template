@@ -3,5 +3,5 @@ language: 'go'
 stack: 'backend'
 
 project:
-  name: 'app2'
-  description: 'HTTP server'
+  name: 'hello-world'
+  description: 'Hello, World!'

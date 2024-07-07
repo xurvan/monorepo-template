@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "github.com/xurvan/monorepo-template/apps/app3/gen/pb"
+	pb "github.com/xurvan/monorepo-template/apps/grpc/gen/pb"
 )
 
 type HelloService struct {

@@ -3,7 +3,7 @@ language: 'go'
 stack: 'backend'
 
 project:
-  name: 'app3'
+  name: 'grpc'
   description: 'gRPC server'
 
 tasks:

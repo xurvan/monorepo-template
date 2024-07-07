@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 // buf:lint:ignore PACKAGE_VERSION_SUFFIX
-package apps.app4.pb;
+package apps.twirp.pb;
 
-option go_package = "github.com/xurvan/monorepo-template/apps/app4";
+option go_package = "github.com/xurvan/monorepo-template/apps/twirp";
 
 service HelloService {
   rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {}

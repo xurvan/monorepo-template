@@ -24,24 +24,24 @@ services:
       - ./tyk/apps:/opt/tyk-gateway/apps
     depends_on:
       - tyk-redis
-  app1:
-    image: ghcr.io/xurvan/app1:latest
-  app2:
-    image: ghcr.io/xurvan/app2:latest
+  hello-world:
+    image: ghcr.io/xurvan/hello-world:latest
+  rest:
+    image: ghcr.io/xurvan/rest:latest
     networks:
       lan:
         ipv4_address: 172.16.0.11
     ports:
       - "127.0.0.1:8001:8080"
-  app3:
-    image: ghcr.io/xurvan/app3:latest
+  grpc:
+    image: ghcr.io/xurvan/grpc:latest
     networks:
       lan:
         ipv4_address: 172.16.0.12
     ports:
       - "127.0.0.1:9001:9090"
-  app4:
-    image: ghcr.io/xurvan/app4:latest
+  twirp:
+    image: ghcr.io/xurvan/twirp:latest
     networks:
       lan:
         ipv4_address: 172.16.0.13
