@@ -1,0 +1,118 @@
+{
+  "components": {},
+  "info": {
+    "title": "app4",
+    "version": "0.1.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/twirp/apps.app4.pb.HelloService/SayHello": {
+      "post": {
+        "operationId": "sayHello",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "description": "User's name",
+                    "maxLength": 20,
+                    "minLength": 2,
+                    "pattern": "^[a-zA-Z]+$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "description": "Response message",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error description",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Validation error"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8080/app4/"
+    },
+    {
+      "description": "local",
+      "url": "http://127.0.0.1:8002/"
+    },
+    {
+      "description": "gateway",
+      "url": "http://127.0.0.1:8000/app4/"
+    }
+  ],
+  "x-tyk-api-gateway": {
+    "info": {
+      "id": "app4",
+      "name": "app4",
+      "state": {
+        "active": true
+      }
+    },
+    "upstream": {
+      "url": "http://172.16.0.13:8080"
+    },
+    "server": {
+      "listenPath": {
+        "value": "/app4/",
+        "strip": true
+      }
+    },
+    "middleware": {
+      "operations": {
+        "sayHello": {
+          "allow": {
+            "enabled": true
+          },
+          "transformRequestBody": {
+            "enabled": true,
+            "format": "json",
+            "body": "ewogICAgIm5hbWUiOiAie3submFtZX19Igp9Cg=="
+          },
+          "validateRequest": {
+            "enabled": true
+          }
+        }
+      }
+    }
+  }
+}
