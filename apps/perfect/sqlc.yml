@@ -1,0 +1,10 @@
+version: "2"
+sql:
+  - schema: "db/migrations"
+    queries: "db/queries"
+    engine: "postgresql"
+    gen:
+      go:
+        out: "gen/db"
+        sql_package: "pgx/v5"
+        emit_pointers_for_null_types: true

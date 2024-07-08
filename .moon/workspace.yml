@@ -7,6 +7,7 @@ projects:
   rest: 'apps/rest'
   grpc: 'apps/grpc'
   twirp: 'apps/twirp'
+  perfect: 'apps/perfect'
 
 vcs:
   manager: 'git'

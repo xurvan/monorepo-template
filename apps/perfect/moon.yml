@@ -1,0 +1,19 @@
+type: 'application'
+language: 'go'
+stack: 'backend'
+
+project:
+  name: 'perfect'
+  description: 'Clean architecture service'
+
+tasks:
+  buf:
+    command: 'buf generate'
+  migrate:
+    env:
+      DATABASE_URL: '${DATABASE_URL}'
+    command: 'migrate -source file://db/migrations/ -database \"$DATABASE_URL\" up'
+  sqlc:
+    command: 'sqlc generate'
+    inputs:
+      - 'sqlc.yml'

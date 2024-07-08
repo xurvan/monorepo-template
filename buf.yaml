@@ -2,3 +2,8 @@ version: v1
 
 lint:
   allow_comment_ignores: true
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - RPC_REQUEST_RESPONSE_UNIQUE
+    - RPC_REQUEST_STANDARD_NAME
+    - RPC_RESPONSE_STANDARD_NAME

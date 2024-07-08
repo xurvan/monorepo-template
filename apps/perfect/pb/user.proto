@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package apps.perfect.pb;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/xurvan/monorepo-template/apps/perfect";
+
+service UserService {
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {}
+  rpc GetUser(IdRequest) returns (User) {}
+  rpc CreateUser(User) returns (User) {}
+  rpc UpdateUser(User) returns (User) {}
+  rpc DeleteUser(IdRequest) returns (google.protobuf.Empty) {}
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  uint32 age = 3;
+  uint64 create_time = 4;
+}
+
+message ListUsersRequest {
+  int32 page_size = 1;
+  int32 page_token = 2;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+  string next_page_token = 2;
+}
+
+message IdRequest {
+  string id = 1;
+}

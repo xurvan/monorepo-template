@@ -47,6 +47,27 @@ services:
         ipv4_address: 172.16.0.13
     ports:
       - "127.0.0.1:8002:8080"
+  perfect-postgres:
+    image: postgres:16.3-alpine3.20
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=perfect
+    networks:
+      lan:
+        ipv4_address: 172.16.0.14
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  perfect:
+    image: ghcr.io/xurvan/app5:latest
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@app5-postgres:5432/perfect?sslmode=disable
+    networks:
+      lan:
+        ipv4_address: 172.16.0.15
+    ports:
+      - "127.0.0.1:8003:8080"
+
 networks:
   lan:
     driver: bridge
@@ -57,4 +78,5 @@ networks:
       com.docker.network.bridge.name: "br-monorepo"
 
 volumes:
+  postgres:
   redis:
