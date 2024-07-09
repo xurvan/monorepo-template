@@ -8,6 +8,7 @@ projects:
   grpc: 'apps/grpc'
   twirp: 'apps/twirp'
   perfect: 'apps/perfect'
+  gateway: 'apps/gateway'
 
 vcs:
   manager: 'git'
