@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package apps.clay.pb;
+
+option go_package = "github.com/xurvan/monorepo-template/apps/clay";
+
+import "google/api/annotations.proto";
+
+service HelloService {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {
+    option (google.api.http) = {
+      post: "/v1/hello/{name}"
+      body: "*"
+    };
+  }
+}
+
+message SayHelloRequest {
+  string name = 1;
+}
+
+message SayHelloResponse {
+  string message = 1;
+}

@@ -1,0 +1,11 @@
+type: 'application'
+language: 'go'
+stack: 'backend'
+
+project:
+  name: 'clay'
+  description: 'clay server'
+
+tasks:
+  buf:
+    command: 'buf dep update && buf generate'

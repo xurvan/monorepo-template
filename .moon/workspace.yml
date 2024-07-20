@@ -9,6 +9,7 @@ projects:
   twirp: 'apps/twirp'
   perfect: 'apps/perfect'
   gateway: 'apps/gateway'
+  clay: 'apps/clay'
 
 vcs:
   manager: 'git'
